@@ -114,7 +114,7 @@ class BaseFormatter(Formatter):
             ret = "(%s)" % ret.replace("-", "")
         if numeralfmt.strip("(").startswith(".") and value > -1 and value < 1:
             ret = ret.replace("0.", ".")
-        if ".[" in numeralfmt and "[.]" not in numeralfmt:
+        if ".[" in numeralfmt and "[.]" not in numeralfmt and "." in ret:
             precision = numeralfmt.replace("]", "").split("[")[1].count("0")
             # remove up to precision zeros from the end
             ii = len(ret)
