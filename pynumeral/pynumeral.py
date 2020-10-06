@@ -121,7 +121,7 @@ class BaseFormatter(Formatter):
             for ii in reversed(range(len(ret))):
                 if ret[ii] not in ("0", "."):
                     break
-            ret = ret[0:ii+1]
+            ret = ret[0 : ii + 1]
         return ret
 
 
