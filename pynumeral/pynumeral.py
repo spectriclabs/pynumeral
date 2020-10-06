@@ -119,8 +119,10 @@ class BaseFormatter(Formatter):
             # remove up to precision zeros from the end
             ii = len(ret)
             for ii in reversed(range(len(ret))):
-                if ret[ii] not in ("0", "."):
+                if ret[ii] != "0":
                     break
+            if ret[ii] == ".":
+                ii -= 1
             ret = ret[0 : ii + 1]
         return ret
 
